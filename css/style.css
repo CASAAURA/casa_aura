@@ -166,6 +166,10 @@ nav a:hover::after {
     position: relative;
 }
 
+.details-text .section-title {
+    font-size: 1.6rem;
+}
+
 .section-title:not(.left) {
     text-align: center;
 }
@@ -199,7 +203,7 @@ nav a:hover::after {
     text-align: center;
     position: relative;
     color: white;
-    background-image: url('../assets/hero_bg.jpg');
+    background-image: url('../assets/casa_aura_cocina.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -324,6 +328,11 @@ nav a:hover::after {
 
 .spec-item {
     text-align: center;
+}
+
+.spec-icon {
+    color: var(--accent-color);
+    margin-bottom: 8px;
 }
 
 .spec-val {
@@ -536,6 +545,14 @@ nav a:hover::after {
     flex-shrink: 0;
 }
 
+.li-more {
+    list-style: none;
+    color: var(--accent-color);
+    font-weight: 500;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+}
+
 /* CSS Calendar Mockup */
 .calendar-mockup {
     background-color: var(--card-bg);
@@ -650,30 +667,23 @@ nav a:hover::after {
     border-top-right-radius: 12px;
 }
 
-.booking-price {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
+.booking-header {
     margin-bottom: 20px;
     border-bottom: 1px solid var(--border-color);
     padding-bottom: 15px;
 }
 
-.price-num {
-    font-size: 1.6rem;
-    font-weight: 700;
+.booking-header h3 {
     color: var(--primary-color);
-}
-
-.price-lbl {
-    font-size: 0.9rem;
-    color: var(--text-muted);
-}
-
-.rating-lbl {
-    font-size: 0.8rem;
-    color: var(--text-color);
+    font-size: 1.3rem;
     font-weight: 500;
+    letter-spacing: 2px;
+    margin-bottom: 6px;
+}
+
+.booking-header p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
 }
 
 /* Direct booking styling */
@@ -738,6 +748,33 @@ nav a:hover::after {
 .btn-whatsapp:hover {
     background-color: #20ba5a;
     border-color: #20ba5a;
+    transform: translateY(-2px);
+}
+
+.btn-airbnb {
+    background-color: #FF5A5F;
+    color: white;
+    border-color: #FF5A5F;
+    width: 100%;
+    text-align: center;
+    border-radius: 8px;
+    padding: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: var(--transition);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.btn-airbnb:hover {
+    background-color: #e0484d;
+    border-color: #e0484d;
     transform: translateY(-2px);
 }
 
@@ -864,87 +901,20 @@ nav a:hover::after {
     box-shadow: 0 0 0 3px var(--accent-light);
 }
 
-/* Simulated Map Mockup */
-.map-mockup {
-    height: 250px;
-    background-color: #e3edf2;
-    position: relative;
+/* Google Maps Embed */
+.map-embed {
     border-radius: 6px;
     overflow: hidden;
     border: 1px solid var(--border-color);
     margin-bottom: 30px;
     box-shadow: var(--shadow-sm);
+    height: 250px;
 }
 
-/* Grid pattern to simulate map roads */
-.map-grid-mockup {
+.map-embed iframe {
+    display: block;
     width: 100%;
     height: 100%;
-    background-image: 
-        radial-gradient(circle, #bcd1db 15%, transparent 20%),
-        linear-gradient(rgba(255,255,255,0.7) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.7) 1px, transparent 1px);
-    background-size: 100px 100px, 30px 30px, 30px 30px;
-    background-position: 0 0, 15px 15px, 15px 15px;
-    opacity: 0.7;
-}
-
-/* Gold map pin */
-.map-pin {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.pin-dot {
-    width: 16px;
-    height: 16px;
-    background-color: var(--accent-color);
-    border: 2px solid white;
-    border-radius: 50%;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
-    position: relative;
-    z-index: 2;
-}
-
-.pin-pulse {
-    width: 40px;
-    height: 40px;
-    background-color: var(--accent-light);
-    border-radius: 50%;
-    position: absolute;
-    top: -12px;
-    left: -12px;
-    z-index: 1;
-    animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-    0% {
-        transform: scale(0.5);
-        opacity: 1;
-    }
-    100% {
-        transform: scale(1.8);
-        opacity: 0;
-    }
-}
-
-.map-label {
-    position: absolute;
-    bottom: 15px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: var(--primary-color);
-    color: white;
-    padding: 6px 15px;
-    border-radius: 50px;
-    font-size: 0.75rem;
-    font-weight: 500;
-    letter-spacing: 1px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-    white-space: nowrap;
 }
 
 .info-list {
