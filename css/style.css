@@ -46,14 +46,14 @@ body {
 
 /* Header & Navigation */
 header {
-    background-color: var(--bg-color);
+    background-color: var(--primary-color);
     padding: 20px 0;
     position: sticky;
     top: 0;
     z-index: 1000;
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.15); /* Delicada línea dorada en la base */
     backdrop-filter: blur(8px);
-    background-color: rgba(249, 249, 247, 0.95);
+    background-color: rgba(13, 77, 79, 0.96); /* Verde oscuro corporativo con transparencia */
 }
 
 .header-container {
@@ -69,8 +69,8 @@ header {
 }
 
 .logo {
-    width: 45px;
-    height: 45px;
+    width: 55px;
+    height: 55px;
     transition: var(--transition);
 }
 
@@ -79,22 +79,22 @@ header {
     font-weight: 600;
     letter-spacing: 3px;
     text-transform: uppercase;
-    color: var(--primary-color);
+    color: white; /* Texto del logo en blanco sobre el fondo verde */
 }
 
 nav {
     display: flex;
     align-items: center;
+    gap: 1.2rem; /* Modern dynamic spacing instead of fixed large margins */
 }
 
 nav a {
     text-decoration: none;
-    color: var(--text-color);
-    margin: 0 18px;
+    color: rgba(255, 255, 255, 0.85); /* Blanco suave para contraste premium */
     font-weight: 500;
-    letter-spacing: 1.5px;
+    letter-spacing: 1px; /* Slightly tighter spacing for a more modern, clean feel */
     text-transform: uppercase;
-    font-size: 0.8rem;
+    font-size: 0.78rem; /* Slightly smaller font to ensure perfect fit without crowding */
     transition: var(--transition);
     position: relative;
     padding: 5px 0;
@@ -112,7 +112,7 @@ nav a::after {
 }
 
 nav a:hover {
-    color: var(--primary-color);
+    color: var(--accent-color); /* Hover en color oro */
 }
 
 nav a:hover::after {
@@ -120,7 +120,7 @@ nav a:hover::after {
 }
 
 nav a.active {
-    color: var(--primary-color);
+    color: var(--accent-color); /* Enlace activo en color oro */
     font-weight: 600;
 }
 
@@ -129,11 +129,12 @@ nav a.active::after {
 }
 
 .btn-nav {
-    background-color: var(--primary-color);
-    color: white !important;
-    padding: 8px 20px;
+    background-color: var(--accent-color); /* Botón de navegación en color oro destacable */
+    color: var(--primary-color) !important; /* Texto verde oscuro para máximo contraste */
+    padding: 8px 18px;
     border-radius: 4px;
-    margin-left: 10px;
+    margin-left: 6px; /* Extra separation space after the gap */
+    font-weight: 600;
 }
 
 .btn-nav::after {
@@ -141,8 +142,8 @@ nav a.active::after {
 }
 
 .btn-nav:hover {
-    background-color: var(--primary-light);
-    color: white;
+    background-color: white; /* Hover cambia a fondo blanco */
+    color: var(--primary-color) !important;
     transform: translateY(-2px);
 }
 
@@ -201,6 +202,14 @@ nav a.active::after {
     margin: 15px 0 0 0;
 }
 
+/* Page Banners */
+.page-banner {
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    position: relative;
+}
+
 /* Hero Section */
 .hero {
     height: 75vh;
@@ -233,6 +242,14 @@ nav a.active::after {
     position: relative;
     z-index: 2;
     max-width: 800px;
+}
+
+.hero-logo {
+    width: 180px;
+    height: 180px;
+    margin-bottom: -40px; /* Margen negativo para compensar el espacio vacío inferior dentro del lienzo del SVG */
+    animation: fadeInUp 1.2s ease;
+    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.35));
 }
 
 .hero h1 {
@@ -1079,7 +1096,7 @@ footer {
     display: none;
     background: none;
     border: none;
-    color: var(--primary-color);
+    color: white; /* Icono en blanco sobre el fondo verde */
     cursor: pointer;
     padding: 5px;
     z-index: 1001;
@@ -1270,6 +1287,55 @@ footer {
     padding: 25px;
 }
 
+.guide-card-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+    border-bottom: 1px solid var(--border-color);
+    transition: var(--transition);
+}
+
+.guide-card:hover .guide-card-img {
+    transform: scale(1.02);
+}
+
+.btn-card-map {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    text-decoration: none;
+    background-color: var(--primary-ultra-light);
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    transition: var(--transition);
+    width: 100%;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+.btn-card-map:hover {
+    background-color: var(--primary-color);
+    color: white !important;
+}
+
+.guide-contact {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.82rem;
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
 .guide-badge {
     display: inline-block;
     padding: 4px 12px;
@@ -1352,19 +1418,8 @@ footer {
     .guide-content {
         grid-template-columns: repeat(2, 1fr);
     }
-}
 
-@media (max-width: 768px) {
-    .hero h1 {
-        font-size: 3rem;
-        letter-spacing: 6px;
-    }
-    
-    .hero p {
-        font-size: 1.1rem;
-        letter-spacing: 2px;
-    }
-    
+    /* Navegación colapsable para tablets y pantallas medianas (evita amontonamiento) */
     header {
         padding: 15px 0;
     }
@@ -1386,8 +1441,8 @@ footer {
         top: 100%;
         left: 0;
         width: 100%;
-        background-color: rgba(249, 249, 247, 0.98);
-        border-bottom: 1px solid var(--border-color);
+        background-color: rgba(13, 77, 79, 0.98); /* Fondo verde corporativo en móvil */
+        border-bottom: 1px solid rgba(212, 175, 55, 0.2); /* Borde dorado */
         box-shadow: var(--shadow-md);
         padding: 25px 0;
         flex-direction: column;
@@ -1411,6 +1466,18 @@ footer {
         margin-left: 0;
         width: 80%;
         text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 3rem;
+        letter-spacing: 6px;
+    }
+    
+    .hero p {
+        font-size: 1.1rem;
+        letter-spacing: 2px;
     }
 
     .specs-grid {
@@ -1442,6 +1509,181 @@ footer {
 
     .guide-content {
         grid-template-columns: 1fr;
+    }
+}
+
+/* ========================================== */
+/*   MEJORAS DE RESPONSIVIDAD PARA MÓVILES    */
+/* ========================================== */
+
+@media (max-width: 1024px) {
+    /* Forzar reestructuración de grids que estaban inline en el HTML */
+    .space-card-detailed {
+        grid-template-columns: 1fr !important;
+        gap: 40px !important;
+    }
+    
+    .service-detail-card {
+        grid-template-columns: 1fr !important;
+        gap: 30px !important;
+        padding-bottom: 35px !important;
+    }
+
+    /* En móviles, forzar a que el bloque visual (imagen/tarjeta) esté arriba y el texto abajo */
+    .service-detail-card > div[style*="order: 2"] {
+        order: -1 !important;
+    }
+
+    .amenities-grid-detailed {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 20px !important;
+    }
+
+    .policies-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 20px !important;
+    }
+    
+    .guide-content {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 25px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Ajustes generales de espaciado y tipografía en móviles */
+    .section {
+        padding: 50px 0 !important; /* Reduce espacios vacíos excesivos en vertical */
+    }
+    
+    .container {
+        padding: 0 20px !important; /* Más margen lateral útil para el contenido */
+    }
+    
+    .section-title {
+        font-size: 1.6rem !important;
+        margin-bottom: 25px !important;
+        letter-spacing: 2px !important;
+    }
+    
+    .section-title::after {
+        margin-top: 10px !important;
+    }
+
+    .btn {
+        padding: 12px 28px !important;
+        font-size: 0.75rem !important;
+    }
+
+    /* Banners de páginas internas */
+    .page-banner {
+        height: 25vh !important; /* Altura más cómoda para celulares */
+    }
+    
+    .page-banner h1 {
+        font-size: 1.8rem !important; /* Evita que el título se rompa o desborde */
+        letter-spacing: 3px !important;
+    }
+
+    /* Grids en pantallas pequeñas (1 sola columna para todo) */
+    .amenities-grid-detailed,
+    .policies-grid,
+    .guide-content,
+    .gallery {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+
+    /* Pestañas de la guía local táctiles y con scroll lateral horizontal */
+    .guide-tabs {
+        justify-content: flex-start !important;
+        overflow-x: auto !important;
+        white-space: nowrap !important;
+        padding: 5px 20px 12px 20px !important;
+        margin-left: -20px !important; /* Expande la barra al borde de la pantalla */
+        margin-right: -20px !important;
+        margin-bottom: 30px !important;
+        -webkit-overflow-scrolling: touch !important;
+        scrollbar-width: none !important; /* Oculta barra en Firefox */
+    }
+    
+    .guide-tabs::-webkit-scrollbar {
+        display: none !important; /* Oculta barra en Chrome/Safari */
+    }
+    
+    .tab-btn {
+        flex: 0 0 auto !important; /* Evita que los botones se achiquen */
+        padding: 8px 18px !important;
+        font-size: 0.78rem !important;
+    }
+
+    /* Tarjetas de reglas de la casa */
+    .rules-intro-card {
+        padding: 25px !important;
+    }
+
+    /* Ajuste en el logo y cabecera en móviles */
+    .logo-text {
+        font-size: 1.1rem !important;
+        letter-spacing: 2px !important;
+    }
+    
+    .logo {
+        width: 45px !important; /* Un poco más pequeño en celular para balancear */
+        height: 45px !important;
+    }
+
+    .hero-logo {
+        width: 140px !important;
+        height: 140px !important;
+        margin-bottom: -30px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Ajustes específicos para pantallas muy angostas (celulares pequeños) */
+    .hero-logo {
+        width: 85px !important;
+        height: 85px !important;
+        margin-bottom: 15px !important;
+    }
+
+    .hero-logo {
+        width: 120px !important;
+        height: 120px !important;
+        margin-bottom: -25px !important;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem !important;
+        letter-spacing: 4px !important;
+    }
+    
+    .hero p {
+        font-size: 0.95rem !important;
+        letter-spacing: 1px !important;
+        margin-bottom: 25px !important;
+    }
+
+    /* Apilar botones del Hero verticalmente en lugar de desbordar */
+    .hero-actions {
+        flex-direction: column !important;
+        gap: 12px !important;
+        width: 100% !important;
+        padding: 0 15px !important;
+    }
+    
+    .hero-actions .btn {
+        width: 100% !important;
+        text-align: center !important;
+    }
+
+    .space-card-detailed .inventory-list {
+        grid-template-columns: 1fr !important;
+    }
+
+    .spec-item .spec-val {
+        font-size: 1.5rem !important;
     }
 }
 
