@@ -14,6 +14,7 @@
     <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
     <link rel="stylesheet" href="css/style.css">
     <script src="js/main.js" defer></script>
+    <script src="js/chatbot.js" defer></script>
 </head>
 <body>
     <header>
@@ -54,39 +55,87 @@
             
             <div class="gallery" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; margin-top: 40px;">
                 <div class="gallery-item" style="position: relative; aspect-ratio: 16/10; overflow: hidden; border-radius: 8px; box-shadow: var(--shadow-sm);">
-                    <img src="assets/gallery_exterior.jpg" alt="Vista Exterior de Casa Aura" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                    <img src="assets/galeria_cama_amigas_1.png" alt="Desayuno en la Cama" style="width: 100%; height: 100%; object-fit: cover; display: block;">
                     <div class="gallery-overlay">
-                        <span>Vista Exterior</span>
+                        <span>Desayuno en la Cama</span>
                     </div>
                 </div>
                 <div class="gallery-item" style="position: relative; aspect-ratio: 16/10; overflow: hidden; border-radius: 8px; box-shadow: var(--shadow-sm);">
-                    <img src="assets/gallery_suite.jpg" alt="Suite Principal en Casa Aura" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                    <img src="assets/galeria_cama_amigas_2.png" alt="Brindis en la Cama" style="width: 100%; height: 100%; object-fit: cover; display: block;">
                     <div class="gallery-overlay">
-                        <span>Suite Principal</span>
+                        <span>Brindis en la Cama</span>
                     </div>
                 </div>
                 <div class="gallery-item" style="position: relative; aspect-ratio: 16/10; overflow: hidden; border-radius: 8px; box-shadow: var(--shadow-sm);">
-                    <img src="assets/gallery_social.jpg" alt="Área Social y Sala de Estar" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                    <img src="assets/galeria_sala_amigas_1.jpg" alt="Amigas en la Sala de Estar" style="width: 100%; height: 100%; object-fit: cover; display: block;">
                     <div class="gallery-overlay">
-                        <span>Área Social</span>
+                        <span>Amigas en la Sala de Estar</span>
                     </div>
                 </div>
                 <div class="gallery-item" style="position: relative; aspect-ratio: 16/10; overflow: hidden; border-radius: 8px; box-shadow: var(--shadow-sm);">
-                    <img src="assets/gallery_sunset.jpg" alt="Atardecer desde la Terraza" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                    <img src="assets/galeria_sala_amigas_2.png" alt="Momento en la Sala" style="width: 100%; height: 100%; object-fit: cover; display: block;">
                     <div class="gallery-overlay">
-                        <span>Atardecer en Catacamas</span>
+                        <span>Momento en la Sala</span>
                     </div>
                 </div>
                 <div class="gallery-item" style="position: relative; aspect-ratio: 16/10; overflow: hidden; border-radius: 8px; box-shadow: var(--shadow-sm);">
-                    <img src="assets/casa_aura_cocina.png" alt="Cocina Minimalista" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                    <img src="assets/galeria_cocina_tabla.png" alt="Tabla de Charcutería en la Cocina" style="width: 100%; height: 100%; object-fit: cover; display: block;">
                     <div class="gallery-overlay">
-                        <span>Cocina Equipada</span>
+                        <span>Tabla de Charcutería</span>
                     </div>
                 </div>
                 <div class="gallery-item" style="position: relative; aspect-ratio: 16/10; overflow: hidden; border-radius: 8px; box-shadow: var(--shadow-sm);">
-                    <img src="assets/casa_aura_habitacion.png" alt="Habitación Secundaria" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                    <img src="assets/galeria_bienvenida.png" alt="Detalle de Bienvenida" style="width: 100%; height: 100%; object-fit: cover; display: block;">
                     <div class="gallery-overlay">
-                        <span>Dormitorio Secundario</span>
+                        <span>Detalle de Bienvenida</span>
+                    </div>
+                </div>
+                <div class="gallery-item" style="position: relative; aspect-ratio: 16/10; overflow: hidden; border-radius: 8px; box-shadow: var(--shadow-sm);">
+                    <img src="assets/galeria_brindis_amigas.png" alt="Brindis y Celebración" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                    <div class="gallery-overlay">
+                        <span>Brindis y Celebración</span>
+                    </div>
+                </div>
+                <div class="gallery-item" style="position: relative; aspect-ratio: 16/10; overflow: hidden; border-radius: 8px; box-shadow: var(--shadow-sm);">
+                    <img src="assets/galeria_ducha.png" alt="Ducha Moderna" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                    <div class="gallery-overlay">
+                        <span>Ducha Moderna</span>
+                    </div>
+                </div>
+                <div class="gallery-item" style="position: relative; aspect-ratio: 16/10; overflow: hidden; border-radius: 8px; box-shadow: var(--shadow-sm);">
+                    <img src="assets/galeria_bano_lavabo.png" alt="Lavabo Elegante" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                    <div class="gallery-overlay">
+                        <span>Lavabo Elegante</span>
+                    </div>
+                </div>
+                <div class="gallery-item" style="position: relative; aspect-ratio: 16/10; overflow: hidden; border-radius: 8px; box-shadow: var(--shadow-sm);">
+                    <img src="assets/galeria_sala_vacia.png" alt="Sala de Estar Acogedora" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                    <div class="gallery-overlay">
+                        <span>Sala de Estar Acogedora</span>
+                    </div>
+                </div>
+                <div class="gallery-item" style="position: relative; aspect-ratio: 16/10; overflow: hidden; border-radius: 8px; box-shadow: var(--shadow-sm);">
+                    <img src="assets/galeria_cocina_bar.png" alt="Cocina con Barra" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                    <div class="gallery-overlay">
+                        <span>Cocina con Barra</span>
+                    </div>
+                </div>
+                <div class="gallery-item" style="position: relative; aspect-ratio: 16/10; overflow: hidden; border-radius: 8px; box-shadow: var(--shadow-sm);">
+                    <img src="assets/galeria_cocina_amigas_3.png" alt="Compartiendo en la Cocina" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                    <div class="gallery-overlay">
+                        <span>Compartiendo en la Cocina</span>
+                    </div>
+                </div>
+                <div class="gallery-item" style="position: relative; aspect-ratio: 16/10; overflow: hidden; border-radius: 8px; box-shadow: var(--shadow-sm);">
+                    <img src="assets/galeria_sala_amigas_3.png" alt="Risas en la Sala" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                    <div class="gallery-overlay">
+                        <span>Risas en la Sala</span>
+                    </div>
+                </div>
+                <div class="gallery-item" style="position: relative; aspect-ratio: 16/10; overflow: hidden; border-radius: 8px; box-shadow: var(--shadow-sm);">
+                    <img src="assets/galeria_cama_principal_3.jpg" alt="Detalle del Dormitorio" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                    <div class="gallery-overlay">
+                        <span>Detalle del Dormitorio</span>
                     </div>
                 </div>
             </div>
